@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style1.css">  
+</head>
+<body>
+  <!-- Modal Tambah -->
+  <center>
+    <h1>Tambahkan Barang Masuk</h1>
+<form id="form2">
+    <div class="stok">
+        <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+                <td><label for="date">Tanggal</label></td> <br />
+                <td> <input type="date" name="Tanggal" placeholder="YYYY-MM-DD" required /></td>
+            </tr>   <br /><br />
+            <tr>
+                <td><label for="name" >Kode Barang</label></td> <br />
+                <td> <input type="text" name="Kode_Barang" size="3" required > </td>
+            </tr>   <br /><br />
+            <tr>
+                <td><label for="name">Nama Barang</label></td> <br />
+                <td><input type="text" name="Nama_Barang" size="15" required></td>
+            </tr>   <br /><br />
+            <tr>
+                <td><label for="name">Jumlah Barang</label></td> <br />
+                <td><input type="text" name="Jumlah_Barang" size="15" required></td>
+            </tr>   <br /><br />
+            <tr>
+                <td><label for="name">Harga Beli</label></td> <br />
+                <td><input type="text" name="Harga_Beli" size="15"required></td>
+            </tr> <br> </br>
+            <tr>
+                <td><label for="name">Harga Jual</label></td> <br />
+                <td><input type="text" name="Harga_Jual" size="15"required></td>
+            </tr> <br> </br>
+            <tr>
+                <td><label for="name" name="Keterangan"> Keterangan </label></td>
+                <td>
+                    <select name="Keterangan">
+                        <option>Tersedia</option>
+                        <option>Kosong</option>
+                    </select required>
+                </td>
+            </tr>
+        </table>
+        </div>
+       
+    <div class="submit">
+        <input type="submit" value="Batal" onclick="hapus()"/>
+        <input type="submit" value="Tambah"  onclick="submit()"/>
+        
+    </div>
+</form>
+
+</center>
+  
+        <script>
+            const electron = require("electron");
+            const {
+               ipcRenderer
+            } = electron;
+      
+            const form = document.getElementById("form2");
+            const elements = {};
+      
+            form.addEventListener("submit", event => {
+               event.preventDefault();
+      
+               for (let i = 0; i < form.elements.length; i++) {
+                  if (form.elements[i].type !=="submit")
+                  elements[form.elements[i].name] = form.elements[i].value;
+               }
+               ipcRenderer.send("transaksi:input", elements);
+            });
+         </script>
+  </body>
+</html>
+
+   
+
