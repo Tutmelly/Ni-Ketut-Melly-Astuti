@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./panjang.css">
+    <title>Easy Converter</title>
+</head>
+<body> 
+    <div class="konvert-box">
+        <h1>Konverter Panjang dan Jarak</h1>
+        <div class="textbox">
+            <label for="tgl"> Masukan Jumlah Panjang  :</label> <br> 
+            <input type="number" placeholder="Jumlah Panjang & Jarak" id="no" name="" value="">
+        </div>
+        <div class="textbox">
+            <label for="tgl"> Satuan Panjang  :</label> <br> 
+            <select name="Konversi" id="Konversi">
+                <option value="m">Meter</option>
+                <option value="k">Kilometer</option>
+                <option value="c">Centimeter</option>
+                <option value="l">Milimeter </option>
+                <option value="h">Hectometer</option>
+            </select>
+        </div>
+        <a onclick="panjang()" >
+            <button class="tombol">Konvert</button></a>
+  
+        <div class="textbox">
+            <p id="hasil"> Hasil Konveter Panjang & Jarak: </p>
+          <table border=1 cellpadding=5 cellspacing=0>
+            <tr>
+                 <td> <label> Meter </label> </td>
+                 <td> <span id="m"> </span>  </td>
+                 </tr>
+            <tr> 
+                <td> <label> Kilometer  </label> </td> 
+                <td> <span id="k"> </span> </td>
+              </tr>
+            <tr>
+               <td> <label> Centimeter  </label> </td>
+              <td>
+                <span id="c"></span>
+              </td> </tr>
+            <tr> 
+               <td> <label> Milimeter </label> </td> 
+              <td>
+                <span id="l"></span>
+              </td></tr>
+
+              <td> <label> Hectometer </label> </td> 
+              <td>
+                <span id="h"></span>
+              </td></tr>
+          </table>
+        </div>
+
+
+    <script>
+        
+function panjang() {
+  var input = document.getElementById("no").value;
+  var e = document.getElementById("Konversi");
+  var value = e.options[e.selectedIndex].value;
+  var text = e.options[e.selectedIndex].text;
+
+  if (value == "m") {
+        document.getElementById("m").innerHTML = input;
+        document.getElementById("k").innerHTML = input / 1000;
+        document.getElementById("c").innerHTML = input * 100;
+        document.getElementById("l").innerHTML = input * 1000;
+        document.getElementById("h").innerHTML = input / 100;
+        
+      } else if (value == "k") {
+        document.getElementById("k").innerHTML = input;
+        document.getElementById("m").innerHTML = input * 1000;
+        document.getElementById("c").innerHTML = input * 100000;
+        document.getElementById("l").innerHTML = input * 1000000;
+        document.getElementById("h").innerHTML = input * 10;
+
+      } else if (value == "c") {
+        document.getElementById("c").innerHTML = input ;
+        document.getElementById("k").innerHTML = input / 100000 ;
+        document.getElementById("m").innerHTML = input / 100 ;
+        document.getElementById("l").innerHTML = input * 10 ;
+        document.getElementById("h").innerHTML = input / 10000 ;
+      
+    } else if (value == "l") {
+        document.getElementById("l").innerHTML = input;
+        document.getElementById("m").innerHTML = input / 1000;
+        document.getElementById("k").innerHTML = input / 1000000 ;
+        document.getElementById("c").innerHTML = input / 10 ;
+        document.getElementById("h").innerHTML = input / 100000 ;
+     
+    } else if (value == "h") {
+        document.getElementById("h").innerHTML = input  ;
+        document.getElementById("m").innerHTML = input * 100 ;
+        document.getElementById("k").innerHTML = input / 10 ;
+        document.getElementById("c").innerHTML = input * 10000 ;
+        document.getElementById("l").innerHTML = input* 100000 ;
+       
+    
+    }
+}
+    
+    </script>
+    
+</body>
+</html>

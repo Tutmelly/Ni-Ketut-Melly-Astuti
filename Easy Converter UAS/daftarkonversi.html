@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Converter</title>
+    <link rel="stylesheet" href="./daftarkonversi.css">
+  
+</head>
+<body>
+  
+    <div class="menuall">
+    <div class="munusatu">
+        <div class="dua">
+        <a onclick = "suhu()" class="suhu">
+            <img src="./img/ikon/termometer.png">
+            <span>Konveter Suhu</span></a>
+    </div>
+    </div>
+
+    <div class="munusatu">
+        <div class="dua">
+        <a onclick = "waktu()" class="waktu">
+            <img src="./img/ikon/waktu.png">
+            <span>Konveter Waktu</span></a>
+    </div>
+    </div>
+
+    <div class="munusatu">
+        <div class="dua">
+        <a onclick = "data()" class="data">
+            <img src="./img/ikon/data.png" >
+        <span>Transmisi Data</span></a>
+    </div>
+    </div>
+
+
+    <div class="munusatu">
+        <div class="dua">
+        <a onclick = "massa()" class="massa">
+            <img src="./img/ikon/massa.png">
+            <span>Massa</span></a>
+    </div>
+    </div>
+
+    <div class="munusatu">
+        <div class="dua">
+
+        <a onclick = "panjang()" class="uang">
+            <img src="./img/ikon/panjang.png"> 
+            <span>Panjang dan Jarak</span></a><br>
+    </div>
+    </div>
+
+    <div class="munusatu">
+    <div class="dua">
+  
+        <a onclick = "bil()" class="massa">
+            <img src="./img/ikon/biner.png">
+            <span>Bilangan</span></a><br>
+    </div>
+    </div>
+    </div>
+   
+
+
+    <script>
+        function suhu(){
+            const { ipcRenderer } = require('electron');
+            ipcRenderer.send("suhu"); 
+    
+        }
+    
+        function waktu(){
+            const { ipcRenderer } = require('electron');
+            ipcRenderer.send("waktu"); 
+    
+    
+        }
+    
+        function data(){
+            const { ipcRenderer } = require('electron');
+            ipcRenderer.send("data"); 
+    
+        }
+    
+        function massa(){
+            const { ipcRenderer } = require('electron');
+            ipcRenderer.send("massa"); 
+    
+    
+        }
+        function panjang(){
+            const { ipcRenderer } = require('electron');
+            ipcRenderer.send("panjang"); 
+    
+    
+        }
+        function bil(){
+            const { ipcRenderer } = require('electron');
+            ipcRenderer.send("bilangan"); 
+    
+        }
+    
+    
+    
+    </script>
+</body>
+</html>

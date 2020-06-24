@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./transmisi_data.css">
+    <title>Konverter Transmisi Data</title>
+</head>
+<body> 
+    <div class="konvert-box">
+        <h1>Konverter Transmisi Data</h1>
+        <div class="textbox">
+          <label for="tgl"> Masukan Jumlah Data  :</label> <br> 
+            <input type="number" placeholder="Jumlah Transmisi Data" id="no" name="" value="">
+        </div>
+        <div class="textbox">
+          <label for="tgl"> Satuan Data  :</label> <br> 
+            <select name="Konversi" id="Konversi">
+                <option value="b">Bit Per Detik</option>
+                <option value="k">Kilobit Per Detik</option>
+                <option value="m">Megabit Per Detik</option>
+                <option value="g">Gigabit Per Detik</option>
+                <option value="t">Terabit Per Detik</option>
+            </select>
+        </div>
+        <a onclick="data()">
+          <button class="tombol">Konvert</button></a>
+
+        
+        <div class="textbox">
+            <p id="hasil"> Hasil Konveter Panjang & Jarak: </p>
+          <table border=1 cellpadding=5 cellspacing=0>
+            <tr>
+                 <td> <label> Bit Per Detik </label> </td>
+                 <td> <span id="b"> </span>  </td>
+                 </tr>
+            <tr> 
+                <td> <label> Kilobit Per Detik </label> </td> 
+                <td> <span id="k"> </span> </td>
+              </tr>
+            <tr>
+               <td> <label> Megabit Per Detik  </label> </td>
+              <td>
+                <span id="m"></span>
+              </td> </tr>
+            <tr> 
+               <td> <label> Gigabit Per Detik</label> </td> 
+              <td>
+                <span id="g"></span>
+              </td></tr>
+
+              <td> <label> Terabit Per Detik </label> </td> 
+              <td>
+                <span id="t"></span>
+              </td></tr>
+          </table>
+        </div>
+
+     
+
+    <script>
+        
+function data() {
+  var input = document.getElementById("no").value;
+  var e = document.getElementById("Konversi");
+  var value = e.options[e.selectedIndex].value;
+  var text = e.options[e.selectedIndex].text;
+
+  if (value == "b") {
+        document.getElementById("b").innerHTML = input ;
+        document.getElementById("k").innerHTML = input / 1000;
+        document.getElementById("m").innerHTML = input / 1000000;
+        document.getElementById("g").innerHTML = input / 1000000000;
+        document.getElementById("t").innerHTML = input / 1000000000000;
+        
+      } else if (value == "k") {
+        document.getElementById("k").innerHTML = input;
+        document.getElementById("b").innerHTML = input * 1000;
+        document.getElementById("m").innerHTML = input / 1000;
+        document.getElementById("g").innerHTML = input / 1000000;
+        document.getElementById("t").innerHTML = input / 1000000000;
+
+      } else if (value == "m") {
+        document.getElementById("m").innerHTML = input;
+        document.getElementById("b").innerHTML = input * 1000000;
+        document.getElementById("k").innerHTML = input * 1000;
+        document.getElementById("g").innerHTML = input / 1000;
+        document.getElementById("t").innerHTML = input / 1000000;
+      
+    } else if (value == "g") {
+        document.getElementById("g").innerHTML = input;
+        document.getElementById("b").innerHTML = input * 1000000000 ;
+        document.getElementById("k").innerHTML = input * 1000000 ;
+        document.getElementById("m").innerHTML = input * 1000;
+        document.getElementById("t").innerHTML = input / 1000 ;
+     
+    } else if (value == "t") {
+        document.getElementById("t").innerHTML = input;
+        document.getElementById("b").innerHTML = input * 1000000000000;
+        document.getElementById("k").innerHTML = input * 1000000000;
+        document.getElementById("m").innerHTML = input * 1000000 ;
+        document.getElementById("g").innerHTML = input * 1000 ;
+
+    }
+}
+    
+    </script>
+    
+</body>
+</html>

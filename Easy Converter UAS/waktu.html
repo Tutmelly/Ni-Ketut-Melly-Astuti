@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./waktu.css">
+    <title>Easy Converter</title>
+</head>
+<body> 
+    <div class="konvert-box">
+        <h1>Konverter Waktu</h1>
+        <div class="textbox">
+          <label for="tgl"> Masukan Waktu  :</label> <br> 
+            <input type="number" placeholder="Jumlah Waktu" id="no" name="" value="">
+        </div>
+        <div class="textbox">
+          <label for="tgl"> Satuan Waktu  :</label> <br> 
+            <select name="Konversi" id="Konversi">
+                <option value="d">Detik</option>
+                <option value="m">Menit</option>
+                <option value="j">Jam</option>
+                <option value="h"> Hari </option>
+                <option value="b">Bulan</option>
+                <option value="t">Tahun</option>
+            </select>
+        </div>
+        <a onclick="waktu()">
+          <button class="tombol">Konvert</button></a>
+
+
+        <div class="textbox">
+          <p id="hasil"> Hasil Konverter Waktu: </p>
+        <table border=1 cellpadding=5 cellspacing=0>
+          <tr>
+               <td> <label> Detik </label> </td>
+               <td> <span id="d"> </span>  </td>
+               </tr>
+          <tr> 
+              <td> <label> Menit </label> </td> 
+              <td> <span id="m"> </span> </td>
+         </tr>
+          <tr>
+             <td> <label> Jam </label> </td>
+            <td>
+              <span id="j"></span>
+            </td> </tr>
+          <tr> 
+             <td> <label> Hari  </label> </td> 
+            <td>
+              <span id="h"></span>
+            </td></tr>
+            <td> <label> Bulan </label> </td> 
+            <td>
+              <span id="b"></span>
+            </td></tr>
+            <td> <label> Tahun</label> </td> 
+            <td>
+              <span id="t"></span>
+            </td></tr>
+        </table>
+      </div>
+    </div>
+
+    <script>
+        
+function waktu() {
+  var input = document.getElementById("no").value;
+  var e = document.getElementById("Konversi");
+  var value = e.options[e.selectedIndex].value;
+  var text = e.options[e.selectedIndex].text;
+
+  if (value == "d") {
+        document.getElementById("d").innerHTML = input;
+        document.getElementById("m").innerHTML = input / 60;
+        document.getElementById("j").innerHTML = input / 3600;
+        document.getElementById("h").innerHTML = input / 86400 ;
+        document.getElementById("b").innerHTML = input / 2.628000000 ;
+        document.getElementById("t").innerHTML = input / 3.1540000000;
+
+      } else if (value == "m") {
+        document.getElementById("m").innerHTML = input;
+        document.getElementById("d").innerHTML = input * 60 ;
+        document.getElementById("j").innerHTML = input / 60;
+        document.getElementById("h").innerHTML = input / 1440;
+        document.getElementById("b").innerHTML = input / 43800 ;
+        document.getElementById("t").innerHTML = input / 525600;
+      } 
+      else if (value == "j") {
+        document.getElementById("j").innerHTML = input ;
+        document.getElementById("d").innerHTML = input * 3600 ;
+        document.getElementById("m").innerHTML = input * 60;
+        document.getElementById("h").innerHTML = input  / 24;
+        document.getElementById("b").innerHTML = input / 730 ;
+        document.getElementById("t").innerHTML = input  / 8760;
+      }
+      else if (value == "h") {
+        document.getElementById("h").innerHTML = input;
+        document.getElementById("d").innerHTML = input * 86400;
+        document.getElementById("m").innerHTML = input * 1440;
+        document.getElementById("j").innerHTML = input * 24;
+        document.getElementById("b").innerHTML = input / 30.417 ;
+        document.getElementById("t").innerHTML = input / 365;
+      }
+      else if (value == "b") {
+        document.getElementById("b").innerHTML = input;
+        document.getElementById("d").innerHTML = input  * 262800000;
+        document.getElementById("m").innerHTML = input  * 43800 ;
+        document.getElementById("j").innerHTML = input  * 730 ;
+        document.getElementById("h").innerHTML = input  * 30 ;
+        document.getElementById("t").innerHTML = input  / 12 ;
+      }
+      else if (value == "t") {
+        document.getElementById("t").innerHTML = input;
+        document.getElementById("d").innerHTML = input * 31540000000 ;
+        document.getElementById("m").innerHTML = input * 525600 ;
+        document.getElementById("j").innerHTML = input * 8760 ;
+        document.getElementById("h").innerHTML = input * 365;
+        document.getElementById("b").innerHTML = input * 12 ;
+        
+      }
+}
+
+    
+    </script>
+    
+</body>
+</html>

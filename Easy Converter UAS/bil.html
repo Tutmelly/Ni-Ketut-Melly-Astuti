@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bil.css">
+    <title>Easy Converter</title>
+</head>
+<body>
+  <div class="konvert-box">
+    <h1>Konverter Bilangan</h1>
+<label for="nama"> Binner : </label>
+<input id="bin" oninput="Convert('bin', 2)" placeholder="bin" spellcheck="false"><br>
+
+<label for="nama"> Octal : </label>
+<input id="oct" oninput="Convert('oct', 8)" placeholder="oct" spellcheck="false"><br>
+
+<label for="nama"> Decimal : </label>
+<input id="dec" oninput="Convert('dec', 10)" placeholder="dec" spellcheck="false"><br>
+
+<label for="nama"> Hexsadecimal : </label>
+<input id="hex" oninput="Convert('hex', 16)" placeholder="hex" spellcheck="false"><br>
+</div>
+
+
+<script>
+
+document.getElementById('bin').addEventListener('keydown', function(ev) {
+  if(ev.keyCode != 48 && ev.keyCode != 49 && ev.keyCode != 8) {
+    alert ("Bilangan Biner Input Angka 1 atau 0")
+    ev.preventDefault();
+  }
+});
+
+function id(id) {
+    return document.getElementById(id);
+  }
+  function Convert(s, n) {
+    if(parseInt(id(s).value, n)) {
+      if("bin" != s) { id("bin").value = parseInt(id(s).value, n).toString(2)  }
+      if("oct" != s) { id("oct").value = parseInt(id(s).value, n).toString(8) }
+      if("dec" != s) { id("dec").value = parseInt(id(s).value, n).toString(10) }
+      if("hex" != s) { id("hex").value = parseInt(id(s).value, n).toString(16) }
+    } else {
+      if("bin" != s) { id("bin").value = "" }
+      if("oct" != s) { id("oct").value = "" }
+      if("dec" != s) { id("dec").value = "" }
+      if("hex" != s) { id("hex").value = "" }
+    }
+  }
+</script>
+</body>
+</html>

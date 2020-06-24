@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./suhu.css">
+    <title>Easy Converter</title>
+</head>
+<body> 
+    <div class="konvert-box">
+        <h1>Konverter Suhu</h1>
+        <div class="textbox">
+          <label for="tgl"> Masukan Jumlah Suhu  :</label> <br> 
+          <input type="number" placeholder=" Jumlah Suhu" id="no" name="" value="">
+        </div>
+        <div class="textbox">
+          <label for="tgl"> Satuan Suhu  :</label> <br> 
+          <select name="Konversi" id="Konversi" placeholder="pilih Satuan"  onclick="text1()">
+                <option value="c">Celcius</option>
+                <option value="r">Reamur</option>
+                <option value="f">Fahrenheit</option>
+                <option value="k">Kelvin </option>
+            </select>
+        </div>
+        <a onclick="suhu()" >
+          <button class="tombol">Konvert</button></a>
+
+
+      <div class="textbox">
+        <p id="hasil"> Hasil Konveter Suhu: </p>
+      <table border=2 cellpadding=3 cellspacing=1>
+        <tr>
+             <td> <label> Celsius </label> </td>
+             <td> <span id="celcius"> </span>  </td>
+             </tr>
+        <tr> 
+            <td> <label> Reamur  </label> </td> 
+            <td> <span id="reamur"> </span> </td>
+          </tr>
+        <tr>
+           <td> <label> Fahrenheit  </label> </td>
+          <td>
+            <span id="fahrenheit"></span>
+          </td> </tr>
+        <tr> 
+           <td> <label> Kelvin  </label> </td> 
+          <td>
+            <span id="kelvin"></span>
+          </td></tr>
+      </table>
+    </div>
+    </div>
+    
+
+
+    <script>
+   
+
+function suhu() {
+  var input = document.getElementById("no").value;
+  var e = document.getElementById("Konversi");
+  var value = e.options[e.selectedIndex].value;
+  var text = e.options[e.selectedIndex].text;
+
+  if (value == "c") {
+        document.getElementById("celcius").innerHTML =  input;
+        document.getElementById("reamur").innerHTML =  (4/5) * input ;
+        document.getElementById("fahrenheit").innerHTML =   (9/5) * input + 32 ;
+        document.getElementById("kelvin").innerHTML =  input + 273;
+        
+      } else if (value == "r") {
+        document.getElementById("reamur").innerHTML = input;
+        document.getElementById("celcius").innerHTML =  (5/4) * input ;
+        document.getElementById("fahrenheit").innerHTML = (9/4) * input + 32;
+        document.getElementById("kelvin").innerHTML = (5/4) * input + 273;
+      }
+      else if (value == "f") {
+        document.getElementById("fahrenheit").innerHTML =  input;
+        document.getElementById("celcius").innerHTML = (5/9) * (input - 32);
+        document.getElementById("reamur").innerHTML = (4/9) * (input - 32);
+        document.getElementById("kelvin").innerHTML = (5/9) * (input-32)  + 273;
+      }
+
+      else if (value == "k") {
+        
+        document.getElementById("celcius").innerHTML =  (input - 273) ;
+        document.getElementById("reamur").innerHTML = (4/5) * (input - 273);
+        document.getElementById("fahrenheit").innerHTML =  (9/5) * (input - 273) + 32;
+        document.getElementById("kelvin").innerHTML = input;
+      }
+}
+    
+    </script>
+    
+</body>
+</html>

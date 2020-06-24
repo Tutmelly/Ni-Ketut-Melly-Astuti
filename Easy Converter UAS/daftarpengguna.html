@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Converter</title>
+    <link rel="stylesheet" href="./daftarpengguna.css">
+</head>
+<body>
+    <h1>Daftar Pengguna</h1>
+   
+    <table>
+        <thead>
+            <tr>
+                <th>Tanggal</th>
+                <th>Nama Pengguna</th>
+                <th>No. Telepon</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="tabelpelanggan"></tbody>
+    </table>
+
+
+
+    <script>
+        const electron = require("electron");
+        const {ipcRenderer} = electron;
+        ipcRenderer.send("datadiri:request:list");
+        
+        ipcRenderer.on('datadiri:response:list', (event, data) => {
+        const lispengguna = document.getElementById("tabelpelanggan");
+
+        data.forEach(data => {
+
+        let kolom = document.createElement('tr');
+        kolom.innerHTML = "<td>" + data.tgl + "</td>";
+        kolom.innerHTML += "<td>" + data.nama + "</td>";
+        kolom.innerHTML += "<td>" + data.no + "</td>";
+        kolom.innerHTML += "<td>" + data.email + "</td>";
+
+        lispengguna.appendChild(kolom);
+
+
+
+        });
+    });
+
+    
+
+    </script>
+</body>
+</html>

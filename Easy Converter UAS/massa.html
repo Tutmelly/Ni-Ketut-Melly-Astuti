@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./massa.css">
+    <title>Easy Converter</title>
+</head>
+<body> 
+    <div class="konvert-box">
+        <h1>Konverter Massa</h1>
+        <div class="textbox">
+            <label for="tgl"> Masukan Jumlah Massa  :</label> <br>
+            <input type="number" placeholder="Jumlah Massa" id="no" name="" value="">
+        </div>
+        <div class="textbox">
+            <label for="tgl"> Satuan Massa  :</label> <br> 
+            <select name="Konversi" id="Konversi">
+                <option value="k">Kilogram</option>
+                <option value="g">Gram</option>
+                <option value="t">Ton</option>
+                <option value="o">Ons </option>
+                <option value="m">Miligram</option>
+                <option value="p">Pon</option>
+            </select>
+        </div>
+
+        <a onclick="massa()" >
+            <button class="tombol">Konvert</button></a>
+
+        <div class="textbox">
+            <p id="hasil"> Hasil Konveter Massa: </p>
+          <table border=1 cellpadding=5 cellspacing=0>
+            <tr>
+                 <td> <label> Kilogram </label> </td>
+                 <td> <span id="kg"> </span>  </td>
+                 </tr>
+            <tr> 
+                <td> <label> Gram  </label> </td> 
+                <td> <span id="gr"> </span> </td>
+              </tr>
+            <tr>
+               <td> <label> Ton </label> </td>
+              <td>
+                <span id="tn"></span>
+              </td> </tr>
+            <tr> 
+               <td> <label> Ons  </label> </td> 
+              <td>
+                <span id="on"></span>
+              </td></tr>
+
+              <td> <label> Miligram</label> </td> 
+              <td>
+                <span id="mg"></span>
+              </td></tr>
+              <td> <label> Pon</label> </td> 
+              <td>
+                <span id="pn"></span>
+              </td></tr>
+          </table>
+        </div>
+
+    <script>
+        
+function massa() {
+  var input = document.getElementById("no").value;
+  var e = document.getElementById("Konversi");
+  var value = e.options[e.selectedIndex].value;
+  var text = e.options[e.selectedIndex].text;
+
+  if (value == "k") {
+        document.getElementById("kg").innerHTML = input;
+        document.getElementById("gr").innerHTML = input * 1000;
+        document.getElementById("tn").innerHTML = input / 1000;
+        document.getElementById("on").innerHTML = input * 35.274;
+        document.getElementById("mg").innerHTML = input * 1000000;
+        document.getElementById("pn").innerHTML = input * 2.205;
+        
+      } else if (value == "g") {
+        document.getElementById("kg").innerHTML = input / 1000;
+        document.getElementById("gr").innerHTML = input;
+        document.getElementById("tn").innerHTML = input / 1000000 ;
+        document.getElementById("on").innerHTML = input * 28.35;
+        document.getElementById("mg").innerHTML = input * 1000 ;
+        document.getElementById("pn").innerHTML = input * 454;
+
+      } else if (value == "t") {
+        document.getElementById("tn").innerHTML = input;
+        document.getElementById("kg").innerHTML = input* 1000;
+        document.getElementById("gr").innerHTML = input * 1000000;
+        document.getElementById("on").innerHTML = input * 35274;
+        document.getElementById("mg").innerHTML = input * 1000000000;
+        document.getElementById("pn").innerHTML = input * 2205;
+      
+    } else if (value == "o") {
+        document.getElementById("on").innerHTML = input;
+        document.getElementById("kg").innerHTML = input / 35.274;
+        document.getElementById("gr").innerHTML = input / 35274 ;
+        document.getElementById("mg").innerHTML = input  * 28350 ;
+        document.getElementById("pn").innerHTML = input  * 16 ;
+     
+    } else if (value == "m") {
+        document.getElementById("mg").innerHTML = input;
+        document.getElementById("on").innerHTML = input / 28350;
+        document.getElementById("kg").innerHTML = input / 1000000;
+        document.getElementById("gr").innerHTML = input  / 1000 ;
+        document.getElementById("tn").innerHTML = input / 1000000000 ;
+        document.getElementById("pn").innerHTML = input / 453592 ;
+    
+    }else if (value == "p") {
+        document.getElementById("pn").innerHTML = input;
+        document.getElementById("on").innerHTML = input * 16;
+        document.getElementById("kg").innerHTML = input / 32.205;
+        document.getElementById("gr").innerHTML = input * 454;
+        document.getElementById("tn").innerHTML = input / 2205;
+        document.getElementById("mg").innerHTML = input * 453592;
+       
+      
+}
+}
+    
+    </script>
+    
+</body>
+</html>

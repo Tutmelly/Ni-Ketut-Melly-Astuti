@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengonversian Satuan Umum</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="menu">
+        <a onclick = "suhu()" class="suhu"><img src="" alt=""><br><span>Konveter Suhu</span></a><br>
+        <a onclick = "waktu()" class="waktu"><img src="" alt=""><br><span>Konveter Waktu</span></a><br>
+        <a onclick = "data()" class="data"><img src="" alt=""><br><span>Transmisi Data</span></a><br>
+        <a onclick = "massa()" class="massa"><img src="" alt=""><br><span>Massa</span></a><br>
+        <a onclick = "panjang()" class="uang"><img src="" alt=""><br><span>Panjang dan Jarak</span></a><br>
+        <a onclick = "bil()" class="massa"><img src="" alt=""><br><span>Bilangan</span></a><br>
+    </div>
+    
+</body>
+</html>
+<script>
+    function suhu(){
+        const { ipcRenderer } = require('electron');
+        ipcRenderer.send("suhu"); 
+
+        const remote = require('electron').remote
+                let w = remote.getCurrentWindow()
+                w.close()
+            , false;
+    }
+
+    function waktu(){
+        const { ipcRenderer } = require('electron');
+        ipcRenderer.send("waktu"); 
+
+        const remote = require('electron').remote
+                let w = remote.getCurrentWindow()
+                w.close()
+            , false;
+    }
+
+    function data(){
+        const { ipcRenderer } = require('electron');
+        ipcRenderer.send("data"); 
+
+        const remote = require('electron').remote
+                let w = remote.getCurrentWindow()
+                w.close()
+            , false;
+    }
+
+    function massa(){
+        const { ipcRenderer } = require('electron');
+        ipcRenderer.send("massa"); 
+
+        const remote = require('electron').remote
+                let w = remote.getCurrentWindow()
+                w.close()
+            , false;
+    }
+    function panjang(){
+        const { ipcRenderer } = require('electron');
+        ipcRenderer.send("panjang"); 
+
+        const remote = require('electron').remote
+                let w = remote.getCurrentWindow()
+                w.close()
+            , false;
+    }
+    function bil(){
+        const { ipcRenderer } = require('electron');
+        ipcRenderer.send("bilangan"); 
+
+        const remote = require('electron').remote
+                let w = remote.getCurrentWindow()
+                w.close()
+            , false;
+    }
+
+
+
+</script>

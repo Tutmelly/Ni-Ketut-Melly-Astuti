@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./beranda.css">
+    <title>Easy Converter</title>
+</head>
+<body>
+    <div class="hed">
+
+    <a onclick = "data()" >
+       
+       <button class="tombol">Mulai Konversi</button></a>
+
+       <script>
+        function data(){
+        const { ipcRenderer } = require('electron');
+        ipcRenderer.send("databio"); 
+        }
+       </script>
+      
+    </div>
+</body>
+</html>

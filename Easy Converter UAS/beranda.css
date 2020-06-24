@@ -1,0 +1,33 @@
+body,html{
+    height: 100%;
+    margin: 0;
+    font-family: sans-serif;
+}
+.hed{
+    
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("./img/BGU.jpg");
+}
+
+.tombol {
+    margin-top: 490px;
+    margin-left: 300px;
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    margin-right: 30px;
+    background-color: #555ba5 ;
+    font-size: 15px;
+    border: none;
+    transition: 0.3s;
+    
+    
+}
+
+.tombol:hover {
+    background-color: black;
+    color: white;
+}

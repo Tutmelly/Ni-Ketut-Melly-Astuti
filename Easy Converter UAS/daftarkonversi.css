@@ -1,0 +1,57 @@
+
+
+    body,html{
+        height: 100%;
+        margin: 0;
+        font-family: sans-serif;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("./img/bg\ conversi.jpg");
+    }
+
+
+
+.menuall
+    {
+        position: absolute;
+        margin-left: 10px;   
+        flex: 50%;
+        padding: 16px;
+        margin-left: 70px;
+        margin-top: 50px;
+        border-radius: 20px;  
+        }
+
+
+@media screen and (max-width: 600px) {
+    .menusatu {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+      
+    }
+  }
+  .munusatu {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+   
+  }
+
+  .dua {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: white;
+    text-align: center;
+    border-radius: 20px;  
+    margin-top: 20px;
+    cursor: pointer;
+    
+    
+  }
+img{
+    width: 200px;
+}
